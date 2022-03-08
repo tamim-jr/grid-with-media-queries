@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid with media queries</title>
+    <style>
+        .container {
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-areas:
+                'nav nav nav nav '
+                'section section section aside'
+                'footer footer footer footer';
+        }
+
+        @media only screen and (max-width: 560px) {
+            body {
+                background-color: red;
+            }
+        }
+
+        @media only screen and (min-width: 560px) and (max-width: 860px) {
+            body {
+                background-color: rgb(51, 255, 0);
+            }
+            .container {
+            grid-template-areas:
+                'nav nav nav nav '
+                'section section section section'
+                'aside aside aside aside'
+                'footer footer footer footer';
+        }
+        }
+
+        @media only screen and (min-width: 860px) and (max-width: 1060px) {
+            body {
+                background-color: rgb(17, 0, 255);
+            }
+        }
+
+        @media only screen and (min-width: 1060px) {
+            body {
+                background-color: rgb(175, 175, 175);
+            }
+        }
+
+        .border-now {
+            border: 2px solid green;
+            background-color: yellow;
+            padding: 15px;
+            margin: 15px;
+        }
+
+        nav {
+            grid-area: nav;
+        }
+
+        section {
+            grid-area: section;
+        }
+
+        aside {
+            grid-area: aside;
+        }
+
+        footer {
+            grid-area: footer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="border-now">
+            Home | Blog | About | Contact
+        </nav>
+        <section class="border-now">
+            <h2>This is heading tag</h2>
+        </section>
+        <aside class="border-now">
+            <h3>This is aside</h3>
+        </aside>
+        <footer class="border-now">
+            <p> This is footer</p>
+        </footer>
+    </div>
+</body>
+
+</html>
